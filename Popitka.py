@@ -217,44 +217,44 @@ if(vibor1 == 1):
     if(vibor2 == 1):
         print("Ну, да начнется бой!\nВыберете персонажа для битвы:\nВоин-1\nМаг-2\nРазбойник-3\nПаладин-4\nОхотник-5\nЧернокнижник-6\nШаман-7\nДруид-8\nЖрец-9\n")
         vibor3 = int(input())
-        if(vibor3==1):
-            p1=Warrior(200,20,50,-10,40,15)
-        elif(vibor3==2):
-            p1=Mage(100,40,100,2048,10,15)
-        elif(vibor3==3):
-            p1=Rogue(50,60,50,75,50,10)
-        elif(vibor3==4):
-            p1=Paladin(150,15,75,-5,40,10)
-        elif(vibor3==5):
-            p1=Hunter()
-        elif(vibor3==6):
-            p1=Warlock()
-        elif(vibor3==7):
-            p1=Shaman()
-        elif(vibor3==8):
-            p1=Druid()
-        elif(vibor3==9):
-            p1=Priest(150,20,50,80,5,5)
-        print("Отличный выбор!\nИ второй игрок: ")
-        vibor4 = int(input())
-        if(vibor4==1):
-            p2=Warrior(200,20,50,-10,40,15)
-        elif(vibor4==2):
-            p2=Mage(100,40,100,2048,10,15)
-        elif(vibor4==3):
-            p2=Rogue(50,60,50,75,50,10)
-        elif(vibor4==4):
-            p2=Paladin(150,15,75,-5,40,10)
-        elif(vibor4==5):
-            p2=Hunter()
-        elif(vibor4==6):
-            p2=Warlock()
-        elif(vibor4==7):
-            p2=Shaman()
-        elif(vibor4==8):
-            p2=Druid()
-        elif(vibor4==9):
-            p2=Priest(150,20,50,80,5,5)
+#         if(vibor3==1):
+#             p1=Warrior(200,20,50,-10,40,15)
+#         elif(vibor3==2):
+#             p1=Mage(100,40,100,2048,10,15)
+#         elif(vibor3==3):
+#             p1=Rogue(50,60,50,75,50,10)
+#         elif(vibor3==4):
+#             p1=Paladin(150,15,75,-5,40,10)
+#         elif(vibor3==5):
+#             p1=Hunter()
+#         elif(vibor3==6):
+#             p1=Warlock()
+#         elif(vibor3==7):
+#             p1=Shaman()
+#         elif(vibor3==8):
+#             p1=Druid()
+#         elif(vibor3==9):
+#             p1=Priest(150,20,50,80,5,5)
+#         print("Отличный выбор!\nИ второй игрок: ")
+         vibor4 = int(input())
+#         if(vibor4==1):
+#             p2=Warrior(200,20,50,-10,40,15)
+#         elif(vibor4==2):
+#             p2=Mage(100,40,100,2048,10,15)
+#         elif(vibor4==3):
+#             p2=Rogue(50,60,50,75,50,10)
+#         elif(vibor4==4):
+#             p2=Paladin(150,15,75,-5,40,10)
+#         elif(vibor4==5):
+#             p2=Hunter()
+#         elif(vibor4==6):
+#             p2=Warlock()
+#         elif(vibor4==7):
+#             p2=Shaman()
+#         elif(vibor4==8):
+#             p2=Druid()
+#         elif(vibor4==9):
+#             p2=Priest(150,20,50,80,5,5)
         
             
         units = {
