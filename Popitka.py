@@ -236,6 +236,7 @@ if(vibor1 == 1):
 #         elif(vibor3==9):
 #             p1=Priest(150,20,50,80,5,5)
 #         print("Отличный выбор!\nИ второй игрок: ")
+
          vibor4 = int(input())
 #         if(vibor4==1):
 #             p2=Warrior(200,20,50,-10,40,15)
