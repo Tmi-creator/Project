@@ -1,6 +1,6 @@
 from random import randint
 import dataclasses
-@dataclasses.dataclass
+
 class Unit(object):
     def __init__(self, hp, atk, mana, first_skill, second_skill, third_skill):
         self.hp = hp
@@ -188,27 +188,29 @@ if(choice1 == 1):
          choice4 = int(input())
         @dataclasses.dataclass
         class UnitInfo:
-        hp: int
-        ...
+            hp: int
+            atk: int
+            mana: int
+            first_skill: int
+            second_skill: int
+            third_skill: int
 
         units = {
-            1: [Warrior, UnitsInfo(hp=..., ...), ...]
+            1: [Warrior, UnitsInfo(hp = 200,atk = 20,mana = 50,first_skill = -10,second_skill = 40,third_skill = 15), Warrior.attack,Warrior.simple_skill,Warrior.kill_rogue]
+            2: [Mage,UnitsInfo(hp = 100,atk = 40,mana = 100,first_skill = 2048,second_skill = 10,third_skill = 15),Mage.total_annigilation,Mage.buff,Mage.mana_up],
+            3: [Rogue,UnitsInfo(hp = 50,atk = 60,mana = 50,first_skill = 75,second_skill = 50,third_skill = 10)],
+            4: [Paladin,UnitsInfo(hp = 150,atk = 15,mana = 75,first_skill = -5,second_skill = 40,third_skill = 10),Paladin.attack,Paladin.heal,Paladin.help_of_god],
+            5: [Hunter,UnitsInfo(hp = 150,atk = 15,mana = 75,first_skill = -5,second_skill = 40,third_skill = 10)],
+            6: [Warlock,UnitsInfo(hp = 150,atk = 20,mana = 200,first_skill = 1,second_skill = 1,third_skill = 1)],
+            7: [Shaman,UnitsInfo(hp = 150,atk = 15,mana = 75,first_skill = -5,second_skill = 40,third_skill = 10)],
+            8: [Druid,UnitsInfo(hp = 150,atk = 15,mana = 75,first_skill = -5,second_skill = 40,third_skill = 10)],
+            9: [Priest,UnitsInfo(hp = 150,atk = 20,mana = 50,first_skill = 80,second_skill = 5,third_skill = 5),Priest.heal,Priest.holy_light,Priest.revive]
         }
             
-        units = {
-            1: [Warrior, (200,20,50,-10,40,15), Warrior.attack,Warrior.Simple_Skill,Warrior.For_Killing_Rogue],
-            2: [Mage,(100,40,100,2048,10,15),Mage.totalAnnigilation,Mage.buff,Mage.manaUp],
-            3: [Rogue,(50,60,50,75,50,10)],
-            4: [Paladin,(150,15,75,-5,40,10),Paladin.attack,Paladin.heal,Paladin.HelpOfGod],
-            5: [Hunter,(1,1,1,1,1,1)],
-            6: [Warlock,(150,20,200,1,1,1)],
-            7: [Shaman,(1,1,1,1,1,1)],
-            8: [Druid,(1,1,1,1,1,1)],
-            9: [Priest,(150,20,50,80,5,5),Priest.heal,Priest.holy_light,Priest.revive]
-        }
-        uinfo1 = units.get(vibor3)
+
+        uinfo1 = units.get(choice3)
         p1 = uinfo1[0](*uinfo1[1])  
-        uinfo2 = units.get(vibor4)
+        uinfo2 = units.get(choice4)
         p2 = uinfo2[0](*uinfo2[1])  
         while(p1.hp!=0 or p2.hp!=0):
             print("p1 turn, 1 - обычная атака,\n 2 - использование 1 способности,\n 3 - использование второй способности, и\n 4 - использование 3 способности\n")
