@@ -186,8 +186,14 @@ if(choice1 == 1):
         choice3 = int(input())
         
          choice4 = int(input())
-        
-        
+        @dataclasses.dataclass
+        class UnitInfo:
+        hp: int
+        ...
+
+        units = {
+            1: [Warrior, UnitsInfo(hp=..., ...), ...]
+        }
             
         units = {
             1: [Warrior, (200,20,50,-10,40,15), Warrior.attack,Warrior.Simple_Skill,Warrior.For_Killing_Rogue],
