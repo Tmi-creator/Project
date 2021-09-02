@@ -216,4 +216,14 @@ if(choice1 == 1):
             print("p1 turn, 1 - обычная атака,\n 2 - использование 1 способности,\n 3 - использование второй способности, и\n 4 - использование 3 способности\n")
             print(p1.hp,p1.cur_atk,p1.mana,"- p1")
             print(p2.hp,p2.cur_atk,p2.mana,"- p2")
+        choices = {
+            1:p1.attack(p2)
+            2:p1.skill1(p2)
+            3:p1.skill2(p2)
+            4:p1.skill3(p2)
+            5:p2.attack(p1)
+            6:p2.skill1(p1)
+            7:p2.skill2(p1)
+            8:p2.skill3(p1)
+        }
             
