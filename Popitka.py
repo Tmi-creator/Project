@@ -226,4 +226,8 @@ if(choice1 == 1):
             7:p2.skill2(p1)
             8:p2.skill3(p1)
         }
+        t1 = int(input())
+        t2 = int(input())
+        choices.get(t1)
+        choices.get(t2+4)
             
