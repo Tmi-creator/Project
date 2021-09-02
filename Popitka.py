@@ -19,45 +19,41 @@ class Unit(object):
         target.take_damage(self.atk)
 
 class Warrior(Unit): # armor dd
-
     def take_damage(dmg):
         self.hp -= dmg + first_skill
 
     def simple_skill(target): #
-        if(self.mana>=10):
+        if(self.mana >= 10):
             target.take_damage(self.second_skill + self.atk * 0.5)
             self.mana -= 10
 
     def kill_rogue(target): #
-        if(self.mana>=10):
+        if(self.mana >= 10):
             if(target == Rogue):
                 target.take_damaged(self.third_skill)
                 target.take_damaged(self.third_skill)
                 self.mana -= 10
 
 class Mage(Unit): # super dd
-
     def total_annigilation(target):
-        if(self.mana>=10):
-            target.take_damage(self.first_skill*randint(0,1)*randint(0,1)*randint(0,1)*randint(0,1)*randint(0,1))
-            self.mana-=10
+        if(self.mana >= 10):
+            target.take_damage(self.first_skill * randint(0,1) * randint(0,1) * randint(0,1) * randint(0,1) * randint(0,1))
+            self.mana -= 10
 
     def buff(target):
-        if(self.mana>=10):
-            target.atk+=second_skill
-            self.mana-=10
+        if(self.mana >= 10):
+            target.atk += second_skill
+            self.mana -= 10
 
     def mana_up(target):
-        if(self.mana>=10):
-            target.mana+=third_skill-10
+        if(self.mana >= 10):
+            target.mana += third_skill-10
         else:
             print('No mana!')
             target.take_damage(self.atk * 0.5)
 
 
 class Rogue(Unit): 
-    super().__init__(self, hp, atk,  mana, first_skill, second_skill, third_skill)
-    
     def take_damage(dmg):
         if(randint(1,100) > self.first_skill):
             self.hp -= dmg
@@ -71,24 +67,21 @@ class Rogue(Unit):
             print('Dodged :)')
             
     def blades_of_death(target):
-        if(self.mana>=10):
-            if(randint(1,100)>self.second_skill):
+        if(self.mana >= 10):
+            if(randint(1,100) > self.second_skill):
                 attack(target)
-                attack(target)
-                
+                attack(target)                
             else:
                 attack(target)
-            self.mana-=10
-            
+            self.mana -= 10            
         else:
             print('No mana!')
             target.take_damage(self.atk * 0.5)
         
     def no_weapon(target):
-        if(self.mana>=10):
-            target.cur_atk-=randint(1,self.third_skill)
-            self.mana-=10
-            
+        if(self.mana >= 10):
+            target.cur_atk -= randint(1,self.third_skill)
+            self.mana -= 10            
         else:
             print('No mana!')
             target.take_damage(self.atk * 0.5)
@@ -99,20 +92,20 @@ class Paladin(Unit): # armor healer
         self.hp -= dmg + first_skill 
     
     def heal(target):
-        if(self.mana>=10):
-            target.hp+=second_skill
-            if(target.hp>target.max_hp):
-                target.hp=target.max_hp
-            self.mana-=10
+        if(self.mana >= 10):
+            target.hp += second_skill
+            if(target.hp > target.max_hp):
+                target.hp = target.max_hp
+            self.mana -= 10
             
         else:
             print('No mana!')
             target.take_damage(self.atk * 0.5)
     
     def help_of_god(target):
-        target.first_skill+=self.third_skill
-        target.second_skill+=self.third_skill
-        self.mana-=10*3
+        target.first_skill += self.third_skill
+        target.second_skill += self.third_skill
+        self.mana -= 10 * 3
 
         
 class Hunter(Unit): # summoner sniper (chto ya delayu voobche)
@@ -167,15 +160,16 @@ class Priest(Unit): # super healer (can revive)
 
 
 class Goblin(Unit):
-   
-class Skelet_ar(Unit):
-
+    pass
+class SkeletAr(Unit):
+    pass
 class Ork(Unit):
-
+    pass
 class Necro(Unit):
-   
-class Skelet_w(Unit):
-        
+    pass
+class SkeletWar(Unit):
+    pass
+
 print("Приветствую тебя, странник! Если желаешь сыграть в пвп, жми 1, если против мобов - 2.")
 choice1 = int(input())
 if(choice1 == 1):
@@ -185,7 +179,7 @@ if(choice1 == 1):
         print("Ну, да начнется бой!\nВыберете персонажа для битвы:\nВоин-1\nМаг-2\nРазбойник-3\nПаладин-4\nОхотник-5\nЧернокнижник-6\nШаман-7\nДруид-8\nЖрец-9\n")
         choice3 = int(input())
         
-         choice4 = int(input())
+        choice4 = int(input())
         @dataclasses.dataclass
         class UnitInfo:
             hp: int
