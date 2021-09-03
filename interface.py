@@ -40,9 +40,15 @@ def interface():
                     Priest.holy_light, Priest.revive]
             }
 
-            uinfo1 = units.get(choice3)
+            while choice3 not in units:
+                print("Incorrect choice.")
+                choice3 = int(input())
+            uinfo1 = units[choice3]
             p1 = uinfo1[0](*uinfo1[1])
-            uinfo2 = units.get(choice4)
+            while choice4 not in units:
+                print("Incorrect choice.")
+                choice4 = int(input())
+            uinfo2 = units[choice4]
             p2 = uinfo2[0](*uinfo2[1])
             while (p1.hp != 0 or p2.hp != 0):
                 print(
