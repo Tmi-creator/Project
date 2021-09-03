@@ -1,9 +1,11 @@
-class Shaman(Unit): # totem dd healer
-    
-class Druid(Unit): # transformer dd healer
+class Shaman(Unit):  # totem dd healer
 
-class Priest(Unit): # super healer (can revive)
-   
+
+class Druid(Unit):  # transformer dd healer
+
+
+class Priest(Unit):  # super healer (can revive)
+
     def heal(target):
         if (self.mana >= 10):
             target.hp += atk * first_skill
@@ -24,15 +26,14 @@ class Priest(Unit): # super healer (can revive)
                 target.take_damage(self.atk * 0.5)
                 target.third_skill -= second_skill
                 # добавить дебафф second_skill готово
-                
+
         else:
             print('No mana!')
             target.take_damage(self.atk * 0.5)
 
-
     def revive(target):
         if (self.mana >= 10):
-            target.max_hp+=self.third_skill
+            target.max_hp += self.third_skill
             if (target.hp <= 0):
                 target.hp = target.max_hp * 0.5
             else:
@@ -40,4 +41,3 @@ class Priest(Unit): # super healer (can revive)
         else:
             print('No mana!')
             target.take_damage(self.atk * 0.5)
-
