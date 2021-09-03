@@ -14,4 +14,3 @@ class Unit(object):
 
     def attack(target):
         target.take_damage(self.atk)
-
