@@ -14,3 +14,12 @@ class Unit(object):
 
     def attack(target):
         target.take_damage(self.atk)
+        
+    def first_skill():
+         raise Exception("Override me")
+            
+    def second_skill():
+         raise Exception("Override me")
+            
+    def third_skill():
+         raise Exception("Override me")
