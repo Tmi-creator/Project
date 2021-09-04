@@ -1,3 +1,4 @@
+ __init__.py
 class Hunter(Unit): # summoner sniper (chto ya delayu voobche)
         pass
 class Hunter_summons(Unit):
