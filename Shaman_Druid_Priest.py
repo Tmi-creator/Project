@@ -1,8 +1,8 @@
 class Shaman(Unit):  # totem dd healer
-
+    pass
 
 class Druid(Unit):  # transformer dd healer
-
+    pass
 
 class Priest(Unit):  # super healer (can revive)
     self.hp=150
