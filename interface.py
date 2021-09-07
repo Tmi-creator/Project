@@ -1,3 +1,4 @@
+import Hunter_Summons_warlock
 def interface():
     print("Приветствую тебя, странник! Если желаешь сыграть в пвп, жми 1, если против мобов - 2.")
     choice1 = int(input())
