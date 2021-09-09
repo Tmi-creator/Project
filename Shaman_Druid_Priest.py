@@ -1,7 +1,19 @@
 class Shaman(Unit):  # totem dd healer
+    skills = {
+        1:self.attack()
+        2:self.first_skill()
+        3:self.second_skill()
+        4:self.third_skill()
+    }
     pass
 
 class Druid(Unit):  # transformer dd healer
+    skills = {
+        1:self.attack()
+        2:self.first_skill()
+        3:self.second_skill()
+        4:self.third_skill()
+    }
     pass
 
 class Priest(Unit):  # super healer (can revive)
@@ -12,6 +24,12 @@ class Priest(Unit):  # super healer (can revive)
     self.second_skill_num=5
     self.third_skill_num=5
     
+    skills = {
+        1:self.attack()
+        2:self.first_skill()
+        3:self.second_skill()
+        4:self.third_skill()
+    }
     def first_skill():
         def heal(target):
             if (self.mana >= 10):
