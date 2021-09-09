@@ -8,6 +8,13 @@ class Shaman(Unit):  # totem dd healer Не будет такого класса
     pass
 
 class Druid(Unit):  # transformer dd healer
+    self.hp=75
+    self.atk=10
+    self.mana=50
+    self.first_skill_num=0
+    self.second_skill_num=0
+    self.third_skill_num=0
+    
     skills = {
         1:self.attack()
         2:self.first_skill()
@@ -21,9 +28,6 @@ class Druid(Unit):  # transformer dd healer
                 self.cur_atk+=30
                 self.hp+=100
                 self.max.hp=self.hp
-                self.first_skill_num=0
-                self.second_skill_num=0
-                self.third_skill_num=0
                 self.mana-=10
                 cooldown=20
             else:
