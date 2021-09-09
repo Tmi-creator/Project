@@ -62,3 +62,5 @@ class Warlock(Unit): # мазохист dd (Много, очень очень м
 					print("No mana!")
 					target.attack(0.5*self.cur_atk)
 		
+
+		
