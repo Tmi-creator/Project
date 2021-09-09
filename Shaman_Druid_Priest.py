@@ -42,7 +42,9 @@ class Druid(Unit):  # transformer dd healer
     def third_skill():
         def revive(target):
             if (self.mana >= 10):
-                
+                self.hp=50
+                self.cur_atk=90
+                self.mana=0
             else:
                 print('No mana!')
                 target.take_damage(self.atk * 0.5)
