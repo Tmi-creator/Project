@@ -8,9 +8,9 @@ class Priest(Unit):  # super healer (can revive)
     self.hp=150
     self.atk=20
     self.mana=50
-    self.first_skill=80
-    self.second_skill=5
-    self.third_skill=5
+    self.first_skill_num=80
+    self.second_skill_num=5
+    self.third_skill_num=5
     
     def first_skill():
         def heal(target):
