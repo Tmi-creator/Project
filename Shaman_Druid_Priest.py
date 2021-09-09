@@ -1,4 +1,4 @@
-class Shaman(Unit):  # totem dd healer
+class Shaman(Unit):  # totem dd healer Не будет такого класса, и все тут
     skills = {
         1:self.attack()
         2:self.first_skill()
@@ -14,7 +14,39 @@ class Druid(Unit):  # transformer dd healer
         3:self.second_skill()
         4:self.third_skill()
     }
-    pass
+    cooldown = 0
+    def first_skill():
+        def transform(target):
+            if (self.mana >= 10 && cooldown<1):
+                self.cur_atk+=30
+                self.hp+=100
+                self.max.hp=self.hp
+                self.first_skill_num=0
+                self.second_skill_num=0
+                self.third_skill_num=0
+                self.mana-=10
+                cooldown=20
+            else:
+                print('No mana/cooldown!')
+                target.take_damage(self.atk * 0.5)
+    
+    def second_skill():
+        def dance_with_tambourine(target):
+            if (self.mana >= 10):
+                if(randint(0,1)*randint(0,1)*randint(0,1)*randint(0,1)==1):
+                    target.hp=0
+            else:
+                print('No mana!')
+                target.take_damage(self.atk * 0.5)
+
+    def third_skill():
+        def revive(target):
+            if (self.mana >= 10):
+                
+            else:
+                print('No mana!')
+                target.take_damage(self.atk * 0.5)
+
 
 class Priest(Unit):  # super healer (can revive)
     self.hp=150
@@ -33,14 +65,14 @@ class Priest(Unit):  # super healer (can revive)
     def first_skill():
         def heal(target):
             if (self.mana >= 10):
-                target.hp += atk * first_skill_num
+                target.hp += self.cur_atk * self.first_skill_num
                 if (target.hp > target.max_hp):
                     target.hp = target.max_hp
                 self.mana -= 10
             # + buff first_skill готово
             else:
                 print('No mana!')
-                target.takeDamage(self.atk * 0.5)
+                target.take_damage(self.atk * 0.5)
     
     def second_skill():
         def holy_light(target):
@@ -50,7 +82,7 @@ class Priest(Unit):  # super healer (can revive)
                     target.hp - 1000
                 else:
                     target.take_damage(self.atk * 0.5)
-                    target.third_skill_num -= second_skill_num
+                    target.third_skill_num -= self.second_skill_num
                     # добавить дебафф second_skill готово
 
             else:
