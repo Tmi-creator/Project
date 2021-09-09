@@ -5,9 +5,9 @@ class Unit(object):
         self.atk = atk
         self.cur_atk = atk
         self.mana = mana
-        self.first_skill = first_skill
-        self.second_skill = second_skill
-        self.third_skill = third_skill
+        self.first_skill_num = first_skill_num
+        self.second_skill_num = second_skill_num
+        self.third_skill_num = third_skill_num
 
     def take_damage(dmg):
         self.hp -= dmg
