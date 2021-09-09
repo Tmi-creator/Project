@@ -38,21 +38,11 @@ def interface():
                     "p1 turn, 1 - обычная атака,\n 2 - использование 1 способности,\n 3 - использование второй способности, и\n 4 - использование 3 способности\n")
                 print(p1.hp, p1.cur_atk, p1.mana, "- p1")
                 print(p2.hp, p2.cur_atk, p2.mana, "- p2")
-            choices = {
-                1: p1.attack(p2)
-                2: p1.first_skill(p2)
-                3: p1.second_skill(p2)
-                4: p1.third_skill(p2)
-                5: p2.attack(p1)
-                6: p2.first_skill(p1)
-                7: p2.second_skill(p1)
-                8: p2.third_skill(p1)
-            }
+                
             t1 = int(input())
+            p1.skills[choice]
             t2 = int(input())
-            choices.get(t1)
-            choices.get(t2 + 4)
-
-
+            p2.skills[choice]
+            
 if (__name__ == __main__):
     run.interface()
