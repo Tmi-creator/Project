@@ -1,4 +1,3 @@
- __init__.py
 class Hunter(Unit): # summoner sniper (chto ya delayu voobche)
         skills = {
         1:self.attack()
