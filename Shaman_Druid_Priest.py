@@ -15,7 +15,7 @@ class Priest(Unit):  # super healer (can revive)
     def first_skill():
         def heal(target):
             if (self.mana >= 10):
-                target.hp += atk * first_skill
+                target.hp += atk * first_skill_num
                 if (target.hp > target.max_hp):
                     target.hp = target.max_hp
                 self.mana -= 10
@@ -28,11 +28,11 @@ class Priest(Unit):  # super healer (can revive)
         def holy_light(target):
             if (self.mana >= 10):
                 self.mana -= 10
-                if (target.third_skill == 'CREATURE'):
+                if (target.third_skill_num == 'CREATURE'):
                     target.hp - 1000
                 else:
                     target.take_damage(self.atk * 0.5)
-                    target.third_skill -= second_skill
+                    target.third_skill_num -= second_skill_num
                     # добавить дебафф second_skill готово
 
             else:
@@ -42,7 +42,7 @@ class Priest(Unit):  # super healer (can revive)
     def third_skill():
         def revive(target):
             if (self.mana >= 10):
-                target.max_hp += self.third_skill
+                target.max_hp += self.third_skill_num
                 if (target.hp <= 0):
                     target.hp = target.max_hp * 0.5
                 else:
