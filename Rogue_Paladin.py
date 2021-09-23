@@ -1,5 +1,5 @@
 from random import randint
-
+from Unit import Unit
 
 class Rogue(Unit):
     self.hp=50
