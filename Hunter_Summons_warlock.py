@@ -37,22 +37,22 @@ class Warlock(Unit):  # мазохист dd (Много, очень очень �
         4: self.third_skill()
     }
 
-    first_skill():
-    suicide_mission(target):
-    if (self.hp > 1 & & self.mana >= 10):
-        ch = int(input())
-        if (ch > self.hp):
-            target.hp -= self.hp * self.first_skill_num
-            self.hp = 1
+    def first_skill():
+       def suicide_mission(target):
+        if (self.hp > 1 & & self.mana >= 10):
+            ch = int(input())
+            if (ch > self.hp):
+                target.hp -= self.hp * self.first_skill_num
+                self.hp = 1
+            else:
+                target.hp -= ch * self.first_skill_num
+                self.hp = -ch
         else:
-            target.hp -= ch * self.first_skill_num
-            self.hp = -ch
-    else:
-        print("No mana!")
-        target.attack(0.5 * self.cur_atk)
+            print("No mana!")
+            target.attack(0.5 * self.cur_atk)
 
-    second_skill():
-        masochizm(target):
+   def second_skill():
+       def masochizm(target):
             if (self.hp > 20 & & self.mana >= 10):
                 target.take_damage(20 + self.second_skill_num)
                 self.hp -= 20
@@ -60,8 +60,8 @@ class Warlock(Unit):  # мазохист dd (Много, очень очень �
                 print("no hp/mana")
                 target.attack(0.5 * self.cur_atk)
 
-    third_skill():
-        take_hp(target):
+   def third_skill():
+       def take_hp(target):
             if (self.mana >= 10):
                 target.hp -= self.third_skill_num
                 self.hp += self.third_skill_num - 10
