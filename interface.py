@@ -1,8 +1,8 @@
-import Hunter_Summons_warlock 
-import Rogue_Paladin
-import Shaman_Druid_Priest
-import Unit
-import Warrior_Mage
+from Hunter_Summons_warlock import Warlock
+from Rogue_Paladin import Rogue, Paladin
+from Shaman_Druid_Priest import Druid, Priest
+from Unit import Unit
+from Warrior_Mage import Warrior, Mage
 def interface():
     print("Приветствую тебя, странник! Если желаешь сыграть в пвп, жми 1, если против мобов - 2.")
     choice1 = int(input())
