@@ -1,3 +1,4 @@
+from Unit import Unit
 class Hunter(Unit):  # summoner sniper (chto ya delayu voobche)
 
     skills = {
