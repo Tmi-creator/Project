@@ -1,4 +1,5 @@
 from Unit import Unit
+from random import randint
 class Shaman(Unit):  # totem dd healer Не будет такого класса, и все тут
     skills = {
         1:self.attack()
