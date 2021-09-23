@@ -38,15 +38,23 @@ def interface():
                 choice4 = int(input())
             p2 = units[choice4]
             while (p1.hp != 0 or p2.hp != 0):
-                print(
-                    "p1 turn, 1 - обычная атака,\n 2 - использование 1 способности,\n 3 - использование второй способности, и\n 4 - использование 3 способности\n")
                 print(p1.hp, p1.cur_atk, p1.mana, "- p1")
                 print(p2.hp, p2.cur_atk, p2.mana, "- p2")
+                print(
+                    "p1 turn, 1 - обычная атака,\n 2 - использование 1 способности,\n 3 - использование второй способности, и\n 4 - использование 3 способности\n")
                 
-            t1 = int(input())
-            p1.skills[choice]
-            t2 = int(input())
-            p2.skills[choice]
+                choice = int(input())
+                while choice not in p1.skills:
+                    print("Incorrect choice.")
+                    choice = int(input())
+                t1 = int(input())
+                p1.skills[choice]
+                choice = int(input())
+                while choice not in p2.skills:
+                    print("Incorrect choice.")
+                    choice = int(input())
+                t2 = int(input())
+                p2.skills[choice]
             
 if (__name__ == __main__):
     run.interface()
