@@ -1,3 +1,4 @@
+from Unit import Unit
 class Shaman(Unit):  # totem dd healer Не будет такого класса, и все тут
     skills = {
         1:self.attack()
