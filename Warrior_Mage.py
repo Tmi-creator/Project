@@ -1,5 +1,5 @@
 from random import randint
-
+from Unit import Unit
 
 class Warrior(Unit):  # armor dd
     self.hp=200
