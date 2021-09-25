@@ -52,13 +52,13 @@ def interface():
                     print("Incorrect choice.")
                     choice = int(input())
                 t1 = int(input())
-                p1.skills[choice]
+                p1.skills[choice](p2)
                 choice = int(input())
                 while choice not in p2.skills:
                     print("Incorrect choice.")
                     choice = int(input())
                 t2 = int(input())
-                p2.skills[choice]
+                p2.skills[choice](p1)
 
 
 interface()
