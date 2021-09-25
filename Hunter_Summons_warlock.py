@@ -1,3 +1,5 @@
+import self
+
 from Unit import Unit
 
 

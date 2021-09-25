@@ -7,43 +7,40 @@ from Unit import Unit
 
 
 class Warrior(Unit):  # armor dd
-    def __init__(self):
-        super().__init__(hp=200, atk=20, mana=50, first_skill_num=-10, second_skill_num=40, third_skill_num=15)
-        # self.hp = 200
-        # self.atk = 20
-        # self.mana = 50
-        # self.first_skill_num = -10
-        # self.second_skill_num = 40
-        # self.third_skill_num = 15
+    self.hp = 200
+    self.atk = 20
+    self.mana = 50
+    self.first_skill_num = -10
+    self.second_skill_num = 40
+    self.third_skill_num = 15
 
-    def first_skill(self, target):
-        self.attack(target)
+    self.skills = {
+        1: self.attack,
+        2: self.first_skill,
+        3: self.second_skill,
+        4: self.third_skill
+    }
 
-    def take_damage(self, dmg):
-        self.hp -= dmg + self.first_skill_num
+    def first_skill(dmg):
+        def take_damage():
+            self.hp -= dmg + self.first_skill_num
 
-    def second_skill(self, target):
+    def second_skill(target):
         def simple_skill():  #
             if self.mana >= 10:
                 target.take_damage(self.second_skill_num + self.atk * 0.5)
                 self.mana -= 10
 
-    def third_skill(self, target):
-        def kill_rogue():
+    def third_skill(target):
+        def kill_rogue():  #
             if self.mana >= 10:
                 if target == Rogue:
                     target.take_damaged(self.third_skill_num)
                     target.take_damaged(self.third_skill_num)
                     self.mana -= 10
-                else:
-                    target.take_damage(self.third_skill_num * 2)
-                    self.mana -= 10
 
 
 class Mage(Unit):  # super dd
-    def __init__(self):
-        super().__init__(hp=100, atk=40, mana=100, first_skill_num=2048, second_skill_num=10, third_skill_num=15)
-
     self.hp = 100
     self.atk = 40
     self.mana = 100
@@ -51,7 +48,14 @@ class Mage(Unit):  # super dd
     self.second_skill_num = 10
     self.third_skill_num = 15
 
-    def first_skill(self, target):
+    self.skills = {
+        1: self.attack,
+        2: self.first_skill,
+        3: self.second_skill,
+        4: self.third_skill
+    }
+
+    def first_skill(target):
         def total_annigilation():
             if self.mana >= 10:
                 target.take_damage(
@@ -59,13 +63,13 @@ class Mage(Unit):  # super dd
                                                                                                                    1))
                 self.mana -= 10
 
-    def second_skill(self, target):
+    def second_skill(target):
         def buff():
             if self.mana >= 10:
                 target.atk += self.second_skill_num
                 self.mana -= 10
 
-    def third_skill(self, target):
+    def third_skill(target):
         def mana_up():
             if self.mana >= 10:
                 target.mana += self.third_skill_num - 10
