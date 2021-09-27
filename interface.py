@@ -59,6 +59,7 @@ def interface():
                     choice = int(input())
                 t2 = int(input())
                 p2.skills[choice](p1)
+                
 
 
 interface()
