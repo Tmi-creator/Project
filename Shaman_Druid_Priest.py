@@ -6,12 +6,6 @@ from Unit import Unit
 
 
 class Shaman(Unit):  # totem dd healer Не будет такого класса, и все тут
-    self.skills = {
-        1: self.attack,
-        2: self.first_skill,
-        3: self.second_skill,
-        4: self.third_skill
-    }
     pass
 
 
@@ -22,14 +16,6 @@ class Druid(Unit):  # transformer dd healer
     self.first_skill_num = 0
     self.second_skill_num = 0
     self.third_skill_num = 0
-
-    self.skills = {
-        1: self.attack,
-        2: self.first_skill,
-        3: self.second_skill,
-        4: self.third_skill
-    }
-
 
     def first_skill(target):
         def transform():
@@ -71,13 +57,6 @@ class Priest(Unit):  # super healer (can revive)
     self.first_skill_num = 80
     self.second_skill_num = 5
     self.third_skill_num = 5
-
-    self.skills = {
-        1: self.attack,
-        2: self.first_skill,
-        3: self.second_skill,
-        4: self.third_skill
-    }
 
     def first_skill(target):
         def heal():

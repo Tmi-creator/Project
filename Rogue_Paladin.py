@@ -12,12 +12,6 @@ class Rogue(Unit):
     self.first_skill_num = 75
     self.second_skill_num = 50
     self.third_skill_num = 10
-    self.skills = {
-        1: self.attack,
-        2: self.first_skill,
-        3: self.second_skill,
-        4: self.third_skill
-    }
 
     def first_skill(dmg):
         def take_damage():
@@ -62,12 +56,6 @@ class Paladin(Unit):  # armor healer
     self.first_skill_num = -5
     self.second_skill_num = 40
     self.third_skill_num = 10
-    self.skills = {
-        1: self.attack,
-        2: self.first_skill,
-        3: self.second_skill,
-        4: self.third_skill
-    }
 
     def first_skill(dmg):
         def take_damage():
