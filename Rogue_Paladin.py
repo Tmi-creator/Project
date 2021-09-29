@@ -6,12 +6,15 @@ from Unit import Unit
 
 
 class Rogue(Unit):
-    self.hp = 50
-    self.atk = 60
-    self.mana = 50
-    self.first_skill_num = 75
-    self.second_skill_num = 50
-    self.third_skill_num = 10
+    def __init__(self):
+        super().__init__(hp=50, atk=60, mana=50, first_skill_num=75, second_skill_num=50, third_skill_num=10)
+
+    # self.hp = 50
+    # self.atk = 60
+    # self.mana = 50
+    # self.first_skill_num = 75
+    # self.second_skill_num = 50
+    # self.third_skill_num = 10
 
     def first_skill(dmg):
         def take_damage():
@@ -50,12 +53,15 @@ class Rogue(Unit):
 
 
 class Paladin(Unit):  # armor healer
-    self.hp = 150
-    self.atk = 15
-    self.mana = 75
-    self.first_skill_num = -5
-    self.second_skill_num = 40
-    self.third_skill_num = 10
+    def __init__(self):
+        super().__init__(hp=150, atk=15, mana=75, first_skill_num=-5, second_skill_num=40, third_skill_num=10)
+
+    # self.hp = 150
+    # self.atk = 15
+    # self.mana = 75
+    # self.first_skill_num = -5
+    # self.second_skill_num = 40
+    # self.third_skill_num = 10
 
     def first_skill(dmg):
         def take_damage():
