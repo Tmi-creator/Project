@@ -10,12 +10,15 @@ class Shaman(Unit):  # totem dd healer Не будет такого класса
 
 
 class Druid(Unit):  # transformer dd healer
-    self.hp = 75
-    self.atk = 10
-    self.mana = 50
-    self.first_skill_num = 0
-    self.second_skill_num = 0
-    self.third_skill_num = 0
+    def __init__(self):
+        super().__init__(hp=75, atk=10, mana=50, first_skill_num=0, second_skill_num=0, third_skill_num=0)
+
+    # self.hp = 75
+    # self.atk = 10
+    # self.mana = 50
+    # self.first_skill_num = 0
+    # self.second_skill_num = 0
+    # self.third_skill_num = 0
 
     def first_skill(target):
         def transform():
@@ -51,12 +54,15 @@ class Druid(Unit):  # transformer dd healer
 
 
 class Priest(Unit):  # super healer (can revive)
-    self.hp = 150
-    self.atk = 20
-    self.mana = 50
-    self.first_skill_num = 80
-    self.second_skill_num = 5
-    self.third_skill_num = 5
+    def __init__(self):
+        super().__init__(hp=150, atk=20, mana=50, first_skill_num=80, second_skill_num=5, third_skill_num=5)
+
+    # self.hp = 150
+    # self.atk = 20
+    # self.mana = 50
+    # self.first_skill_num = 80
+    # self.second_skill_num = 5
+    # self.third_skill_num = 5
 
     def first_skill(target):
         def heal():
