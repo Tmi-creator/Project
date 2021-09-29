@@ -34,13 +34,6 @@ class Warlock(Unit):  # мазохист dd (Много, очень очень �
     self.second_skill_num = 20
     self.third_skill_num = 30
 
-    self.skills = {
-        1: self.attack,
-        2: self.first_skill,
-        3: self.second_skill,
-        4: self.third_skill
-    }
-
     def first_skill(target):
         def suicide_mission():
             if self.hp > 1 and self.mana >= 10:
