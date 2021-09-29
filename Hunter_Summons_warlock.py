@@ -4,35 +4,23 @@ from Unit import Unit
 
 
 # class Hunter(Unit):  # summoner sniper (chto ya delayu voobche)
-#
-#     self.skills = {
-#         1: self.attack,
-#         2: self.first_skill,
-#         3: self.second_skill,
-#         4: self.third_skill
-#     }
-#
 #     pass
 
 
 # class Hunter_summons(Unit):
-#     self.skills = {
-#         1: self.attack,
-#         2: self.first_skill,
-#         3: self.second_skill,
-#         4: self.third_skill
-#     }
-#
 #     pass
 
 
 class Warlock(Unit):  # мазохист dd (Много, очень очень много) (can heal himself)
-    self.hp = 150
-    self.atk = 20
-    self.mana = 200
-    self.first_skill_num = 1.1
-    self.second_skill_num = 20
-    self.third_skill_num = 30
+    def __init__(self):
+        super().__init__(hp=150, atk=20, mana=200, first_skill_num=1.1, second_skill_num=20, third_skill_num=30)
+
+    #self.hp = 150
+    #self.atk = 20
+    #self.mana = 200
+    #elf.first_skill_num = 1.1
+    #self.second_skill_num = 20
+    #self.third_skill_num = 30
 
     def first_skill(target):
         def suicide_mission():
