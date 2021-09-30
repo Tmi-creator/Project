@@ -1,7 +1,5 @@
 from random import randint
 
-import self
-
 from Unit import Unit
 
 
@@ -20,7 +18,7 @@ class Druid(Unit):  # transformer dd healer
     # self.second_skill_num = 0
     # self.third_skill_num = 0
 
-    def first_skill(target):
+    def first_skill(self, target):
         def transform():
             cooldown = 0
             if self.mana >= 10 and cooldown < 1:
@@ -33,7 +31,7 @@ class Druid(Unit):  # transformer dd healer
                 print('No mana/cooldown!')
                 target.take_damage(self.atk * 0.5)
 
-    def second_skill(target):
+    def second_skill(self, target):
         def dance_with_tambourine():
             if self.mana >= 10:
                 if randint(0, 1) * randint(0, 1) * randint(0, 1) * randint(0, 1) == 1:
@@ -42,7 +40,7 @@ class Druid(Unit):  # transformer dd healer
                 print('No mana!')
                 target.take_damage(self.atk * 0.5)
 
-    def third_skill(target):
+    def third_skill(self, target):
         def revive():
             if self.mana >= 10:
                 self.hp = 50
@@ -64,7 +62,7 @@ class Priest(Unit):  # super healer (can revive)
     # self.second_skill_num = 5
     # self.third_skill_num = 5
 
-    def first_skill(target):
+    def first_skill(self, target):
         def heal():
             if self.mana >= 10:
                 target.hp += self.cur_atk * self.first_skill_num
@@ -76,7 +74,7 @@ class Priest(Unit):  # super healer (can revive)
                 print('No mana!')
                 target.take_damage(self.atk * 0.5)
 
-    def second_skill(target):
+    def second_skill(self, target):
         def holy_light():
             if self.mana >= 10:
                 self.mana -= 10
@@ -91,7 +89,7 @@ class Priest(Unit):  # super healer (can revive)
                 print('No mana!')
                 target.take_damage(self.atk * 0.5)
 
-    def third_skill(target):
+    def third_skill(self, target):
         def revive():
             if self.mana >= 10:
                 target.max_hp += self.third_skill_num
