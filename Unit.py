@@ -18,20 +18,17 @@ class Unit(object):
             4: self.third_skill
         }
 
-
-    def take_damage(dmg):
+    def take_damage(self, dmg):
         self.hp -= dmg
 
-    def attack(target):
+    def attack(self, target):
         target.take_damage(self.atk)
 
-    def first_skill(target):
+    def first_skill(self, target):
         raise Exception("Override me")
 
-    def second_skill(target):
+    def second_skill(self, target):
         raise Exception("Override me")
 
-    def third_skill(target):
+    def third_skill(self, target):
         raise Exception("Override me")
-
-
