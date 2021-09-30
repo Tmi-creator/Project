@@ -1,5 +1,3 @@
-import self
-
 from Unit import Unit
 
 
@@ -15,14 +13,14 @@ class Warlock(Unit):  # мазохист dd (Много, очень очень �
     def __init__(self):
         super().__init__(hp=150, atk=20, mana=200, first_skill_num=1.1, second_skill_num=20, third_skill_num=30)
 
-    #self.hp = 150
-    #self.atk = 20
-    #self.mana = 200
-    #elf.first_skill_num = 1.1
-    #self.second_skill_num = 20
-    #self.third_skill_num = 30
+    # self.hp = 150
+    # self.atk = 20
+    # self.mana = 200
+    # elf.first_skill_num = 1.1
+    # self.second_skill_num = 20
+    # self.third_skill_num = 30
 
-    def first_skill(target):
+    def first_skill(self, target):
         def suicide_mission():
             if self.hp > 1 and self.mana >= 10:
                 ch = int(input())
@@ -37,7 +35,7 @@ class Warlock(Unit):  # мазохист dd (Много, очень очень �
                 target.attack(0.5 * self.cur_atk)
 
 
-def second_skill(target):
+def second_skill(self, target):
     def masochizm():
         if self.hp > 20 and self.mana >= 10:
             target.take_damage(20 + self.second_skill_num)
@@ -47,7 +45,7 @@ def second_skill(target):
             target.attack(0.5 * self.cur_atk)
 
 
-def third_skill(target):
+def third_skill(self, target):
     def take_hp():
         if self.mana >= 10:
             target.hp -= self.third_skill_num
