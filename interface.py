@@ -14,8 +14,6 @@ if choice1 == 1:
             "битвы:\nВоин-1\nМаг-2\nРазбойник-3\nПаладин-4\nОхотник-5\nЧернокнижник-6\nШаман-7\nДруид-8\nЖрец-9\n")
         choice3 = int(input())
 
-
-
         units = {
             1: Warrior,
             2: Mage,
@@ -38,7 +36,7 @@ if choice1 == 1:
             print("Incorrect choice.")
             choice4 = int(input())
         p2 = units[choice4]()
-        while p1.hp != 0 or p2.hp != 0:
+        while p1.hp > 0 and p2.hp > 0:
             print(p1.hp, p1.cur_atk, p1.mana, "- p1")
             print(p2.hp, p2.cur_atk, p2.mana, "- p2")
             print(
@@ -49,10 +47,16 @@ if choice1 == 1:
             while choice not in p1.skills:
                 print("Incorrect choice.")
                 choice = int(input())
-            p1.skills[choice]
-            choice = int(input())
+            p1.skills[choice](p2)
+            if p2.hp < 0:
+                print('p1 wins!')
+                break
             print('And p2')
+            choice = int(input())
             while choice not in p2.skills:
                 print("Incorrect choice.")
                 choice = int(input())
-            p2.skills[choice]
+            p2.skills[choice](p1)
+            if p1.hp < 0:
+                print('p2 wins!')
+                break
