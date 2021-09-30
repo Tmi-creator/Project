@@ -29,11 +29,14 @@ class Warrior(Unit):  # armor dd
                 self.mana -= 10
 
     def third_skill(self, target):
-        def kill_rogue():  #
+        def kill_rogue():
             if self.mana >= 10:
                 if target == Rogue:
                     target.take_damaged(self.third_skill_num)
                     target.take_damaged(self.third_skill_num)
+                    self.mana -= 10
+                else:
+                    target.take_damage(self.third_skill_num * 2)
                     self.mana -= 10
 
 
