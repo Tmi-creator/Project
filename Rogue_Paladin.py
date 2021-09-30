@@ -1,7 +1,5 @@
 from random import randint
 
-import self
-
 from Unit import Unit
 
 
@@ -16,7 +14,7 @@ class Rogue(Unit):
     # self.second_skill_num = 50
     # self.third_skill_num = 10
 
-    def first_skill(dmg):
+    def first_skill(self, dmg):
         def take_damage():
             if randint(1, 100) > self.first_skill_num:
                 self.hp -= dmg
@@ -29,7 +27,7 @@ class Rogue(Unit):
             else:
                 print('Dodged :)')
 
-    def second_skill(target):
+    def second_skill(self, target):
         def blades_of_death():
             if self.mana >= 10:
                 if randint(1, 100) > self.second_skill_num:
@@ -42,7 +40,7 @@ class Rogue(Unit):
                 print('No mana!')
                 target.take_damage(self.atk * 0.5)
 
-    def third_skill(target):
+    def third_skill(self, target):
         def no_weapon():
             if self.mana >= 10:
                 target.cur_atk -= randint(1, self.third_skill_num)
@@ -63,11 +61,11 @@ class Paladin(Unit):  # armor healer
     # self.second_skill_num = 40
     # self.third_skill_num = 10
 
-    def first_skill(dmg):
+    def first_skill(self, dmg):
         def take_damage():
             self.hp -= dmg + self.first_skill_num
 
-    def second_skill(target):
+    def second_skill(self, target):
         def heal():
             if self.mana >= 10:
                 target.hp += self.second_skill_num
@@ -78,7 +76,7 @@ class Paladin(Unit):  # armor healer
                 print('No mana!')
                 target.take_damage(self.atk * 0.5)
 
-    def third_skill(target):
+    def third_skill(self, target):
         def help_of_god():
             target.first_skill_num += self.third_skill_num
             target.second_skill_num += self.third_skill_num
