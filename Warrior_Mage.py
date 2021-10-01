@@ -44,12 +44,12 @@ class Mage(Unit):  # super dd
     def __init__(self):
         super().__init__(hp=100, atk=40, mana=100, first_skill_num=2048, second_skill_num=10, third_skill_num=15)
 
-    self.hp = 100
-    self.atk = 40
-    self.mana = 100
-    self.first_skill_num = 2048
-    self.second_skill_num = 10
-    self.third_skill_num = 15
+    #self.hp = 100
+    #self.atk = 40
+    #self.mana = 100
+    #self.first_skill_num = 2048
+    #self.second_skill_num = 10
+    #self.third_skill_num = 15
 
     def first_skill(self, target):
         def total_annigilation():
