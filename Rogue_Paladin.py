@@ -13,8 +13,7 @@ class Rogue(Unit):
     # self.second_skill_num = 50
     # self.third_skill_num = 10
 
-    def first_skill(self, dmg):
-        # def take_damage():
+    def take_damage(self, dmg):
         if randint(1, 100) > self.first_skill_num:
             self.hp -= dmg
         else:
