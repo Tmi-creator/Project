@@ -23,13 +23,13 @@ class Warlock(Unit):  # мазохист dd (Много, очень очень �
     def first_skill(self, target):
         # def suicide_mission():
         if self.hp > 1 and self.mana >= 10:
-            ch = int(input())
+            ch = int(input("Введите кол-во атаки на хп"))
             if ch > self.hp:
                 target.hp -= self.hp * self.first_skill_num
-                self.hp = 1
+                self.hp -= self.hp-1
             else:
                 target.hp -= ch * self.first_skill_num
-                self.hp = -ch
+                self.hp -= ch
         else:
             print("No mana!")
             target.attack(0.5 * self.cur_atk)
