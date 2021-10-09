@@ -1,9 +1,7 @@
-from random import randint
-
 import self
-
 from Rogue_Paladin import Rogue
 from Unit import Unit
+from random import randint
 
 
 class Warrior(Unit):  # armor dd
@@ -23,21 +21,21 @@ class Warrior(Unit):  # armor dd
         self.hp -= dmg + self.first_skill_num
 
     def second_skill(self, target):
-        def simple_skill():  #
-            if self.mana >= 10:
-                target.take_damage(self.second_skill_num + self.atk * 0.5)
-                self.mana -= 10
+        if self.mana >= 10:
+            print(1)
+            target.take_damage(self.second_skill_num + self.atk * 0.5)
+            self.mana -= 10
 
     def third_skill(self, target):
-        def kill_rogue():
-            if self.mana >= 10:
-                if target == Rogue:
-                    target.take_damaged(self.third_skill_num)
-                    target.take_damaged(self.third_skill_num)
-                    self.mana -= 10
-                else:
-                    target.take_damage(self.third_skill_num * 2)
-                    self.mana -= 10
+        # def kill_rogue():
+        if self.mana >= 10:
+            if target == Rogue:
+                target.take_damaged(self.third_skill_num)
+                target.take_damaged(self.third_skill_num)
+                self.mana -= 10
+            else:
+                target.take_damage(self.third_skill_num * 2)
+                self.mana -= 10
 
 
 class Mage(Unit):  # super dd
@@ -52,23 +50,23 @@ class Mage(Unit):  # super dd
     self.third_skill_num = 15
 
     def first_skill(self, target):
-        def total_annigilation():
-            if self.mana >= 10:
-                target.take_damage(
-                    self.first_skill_num * randint(0, 1) * randint(0, 1) * randint(0, 1) * randint(0, 1) * randint(0,
-                                                                                                                   1))
-                self.mana -= 10
+        # def total_annihilation():
+        if self.mana >= 10:
+            target.take_damage(
+                self.first_skill_num * randint(0, 1) * randint(0, 1) * randint(0, 1) * randint(0, 1) * randint(0,
+                                                                                                               1))
+            self.mana -= 10
 
     def second_skill(self, target):
-        def buff():
-            if self.mana >= 10:
-                target.atk += self.second_skill_num
-                self.mana -= 10
+        # def buff():
+        if self.mana >= 10:
+            target.atk += self.second_skill_num
+            self.mana -= 10
 
     def third_skill(self, target):
-        def mana_up():
-            if self.mana >= 10:
-                target.mana += self.third_skill_num - 10
-            else:
-                print('No mana!')
-                target.take_damage(self.atk * 0.5)
+        # def mana_up():
+        if self.mana >= 10:
+            target.mana += self.third_skill_num - 10
+        else:
+            print('No mana!')
+            target.take_damage(self.atk * 0.5)
