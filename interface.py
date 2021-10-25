@@ -160,4 +160,4 @@ if choice1 == 1:
                     print('t2 wins!')
                     break
 
-            print("game over", p1.hp, p2.hp, p3.hp, p4.hp)
+            print("game over", p1.hp, p2.hp, p3.hp, p4.hp) #те кто с 0 хп могут дамажить, надо фиксить
