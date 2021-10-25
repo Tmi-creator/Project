@@ -3,6 +3,18 @@ from Rogue_Paladin import Rogue, Paladin
 from Shaman_Druid_Priest import Druid, Priest
 from Warrior_Mage import Warrior, Mage
 
+units = {
+    1: Warrior,
+    2: Mage,
+    3: Rogue,
+    4: Paladin,
+    # 5: Hunter,
+    6: Warlock,
+    # 7: Shaman,
+    8: Druid,
+    9: Priest
+
+}
 print("Приветствую тебя, странник! Если желаешь сыграть в пвп, жми 1, если против мобов - 2.")
 choice1 = int(input())
 if choice1 == 1:
@@ -13,19 +25,6 @@ if choice1 == 1:
             "Ну, да начнется бой!\nВыберете персонажа для "
             "битвы:\nВоин-1\nМаг-2\nРазбойник-3\nПаладин-4\nОхотник-5\nЧернокнижник-6\nШаман-7\nДруид-8\nЖрец-9\n")
         choice3 = int(input())
-
-        units = {
-            1: Warrior,
-            2: Mage,
-            3: Rogue,
-            4: Paladin,
-            # 5: Hunter,
-            6: Warlock,
-            # 7: Shaman,
-            8: Druid,
-            9: Priest
-
-        }
 
         while choice3 not in units:
             print("Incorrect choice.")
@@ -61,3 +60,18 @@ if choice1 == 1:
                 print('p2 wins!')
                 break
         print("game over", p1.hp, p2.hp)
+    elif choice2 == 2:
+        print("Оооотличный выбор, а теперь с командами: 2/2(1) или 3/3(2)?")
+        choice10 = int(input())
+        if choice10 == 1:
+            print("Выбирайте персонажей на величайшую битву!")
+            choice3 = int(input())
+            while choice3 not in units:
+                print("Incorrect choice.")
+                choice3 = int(input())
+            p1 = units[choice3]()
+            choice4 = int(input())
+            while choice4 not in units:
+                print("Incorrect choice.")
+                choice4 = int(input())
+            p2 = units[choice4]()
