@@ -60,3 +60,4 @@ if choice1 == 1:
             if p1.hp < 0:
                 print('p2 wins!')
                 break
+        print("game over", p1.hp, p2.hp)
