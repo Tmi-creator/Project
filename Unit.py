@@ -32,3 +32,5 @@ class Unit(object):
 
     def third_skill(self, target):
         raise Exception("Override me")
+
+        
