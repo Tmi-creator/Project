@@ -15,6 +15,7 @@ units = {
     9: Priest
 
 }
+
 print("Приветствую тебя, странник! Если желаешь сыграть в пвп, жми 1, если против мобов - 2.")
 choice1 = int(input())
 if choice1 == 1:
@@ -60,6 +61,7 @@ if choice1 == 1:
                 print('p2 wins!')
                 break
         print("game over", p1.hp, p2.hp)
+
     elif choice2 == 2:
         print("Оооотличный выбор, а теперь с командами: 2/2(1) или 3/3(2)?")
         choice10 = int(input())
@@ -97,22 +99,65 @@ if choice1 == 1:
                 print(
                     "p1 turn, 1 - обычная атака,\n 2 - использование 1 способности,\n 3 - использование второй "
                     "способности, и\n 4 - использование 3 способности\n")
-
+                t_all = {
+                    1: p1,
+                    2: p2,
+                    3: p3,
+                    4: p4
+                }
                 choice = int(input())
                 while choice not in p1.skills:
                     print("Incorrect choice.")
                     choice = int(input())
-                p1.skills[choice](p2)
-                if p2.hp < 0:
-                    print('p1 wins!')
+                choice_n = int(input("А теперь выберите цель"))
+                while choice_n not in t_all or t_all[choice_n].hp <= 0:
+                    print("Incorrect choice.")
+                    choice_n = int(input())
+                p1.skills[choice](t_all[choice_n])
+                if p3.hp < 0 and p4.hp < 0:
+                    print('t1 wins!')
                     break
+
                 print('And p2')
                 choice = int(input())
                 while choice not in p2.skills:
                     print("Incorrect choice.")
                     choice = int(input())
-                p2.skills[choice](p1)
-                if p1.hp < 0:
-                    print('p2 wins!')
+                choice_n = int(input("А теперь выберите цель"))
+                while choice_n not in t_all or t_all[choice_n].hp <= 0:
+                    print("Incorrect choice.")
+                    choice_n = int(input())
+                p2.skills[choice](t_all[choice_n])
+                if p3.hp < 0 and p4.hp < 0:
+                    print('t1 wins!')
                     break
 
+                print("and p3")
+                choice = int(input())
+                while choice not in p3.skills:
+                    print("Incorrect choice.")
+                    choice = int(input())
+                choice_n = int(input("А теперь выберите цель"))
+                while choice_n not in t_all or t_all[choice_n].hp <= 0:
+                    print("Incorrect choice.")
+                    choice_n = int(input())
+                p3.skills[choice](t_all[choice_n])
+                if p1.hp < 0 and p2.hp < 0:
+                    print('t2 wins!')
+                    break
+
+                print('And p4')
+                choice = int(input())
+                while choice not in p4.skills:
+                    print("Incorrect choice.")
+                    choice = int(input())
+                choice_n = int(input("А теперь выберите цель"))
+                while choice_n not in t_all or t_all[choice_n].hp <= 0:
+                    print("Incorrect choice.")
+                    choice_n = int(input())
+                p4.skills[choice](t_all[choice_n])
+                if p1.hp < 0 and p2.hp < 0:
+                    print('t2 wins!')
+                    break
+
+            print("game over", p1.hp, p2.hp, p3.hp, p4.hp)
