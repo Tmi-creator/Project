@@ -22,7 +22,6 @@ class Warrior(Unit):  # armor dd
 
     def second_skill(self, target):
         if self.mana >= 10:
-            print(1)
             target.take_damage(self.second_skill_num + self.atk * 0.5)
             self.mana -= 10
 
